@@ -25,7 +25,14 @@ class MsbuildResolver implements IExecutableResolver {
         } else {
             vswhere.command() << '-latest'
         }
-        vswhere.command() << '-products' << '*' << '-requires' << 'Microsoft.Component.MSBuild' << '-property' << 'installationPath'
+        
+        if (msbuild.products) {
+            vswhere.command() << '-products' << msbuild.products
+        } else {
+            vswhere.command() << '-products' << '*'
+        }
+        
+        vswhere.command() << '-requires' << 'Microsoft.Component.MSBuild' << '-property' << 'installationPath'
 
         def proc = vswhere.start()
         proc.waitFor()
