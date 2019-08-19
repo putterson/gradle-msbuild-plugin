@@ -12,6 +12,7 @@ import org.gradle.internal.os.OperatingSystem
 class Msbuild extends ConventionTask {
 
     String version
+    String products
     String msbuildDir
     def solutionFile
     def projectFile
