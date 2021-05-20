@@ -1,5 +1,20 @@
 # gradle-msbuild-plugin changelog
 
+# 3.10
+
+# 3.9
+### Fixed
+* Support newer MSBuild versions (e.g., 16.7.0.37604)
+
+# 3.8
+### Fixed
+* The greatest/latest installed Visual Studio version is used to parse the project & solutions (instead of the first it finds).
+
+# 3.7
+### Fixed
+* Unzip binaries into temporaryDir of the task
+* Prevent using MSBuild paths that don't actually contain msbuild.exe
+
 # 3.6
 ### Added
 * Support finding msbuild buildtools from VS2019 installation
